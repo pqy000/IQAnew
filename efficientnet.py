@@ -348,7 +348,7 @@ def efficientnet_b0(pretrained=True):
 # 初始化EfficientNet模型，设置预训练参数为True
     model = EfficientNet.from_pretrained(model_name) if pretrained else EfficientNet.from_name(model_name)
     if pretrained:
-        pretrained_path = "/data/qingyi/efficientnet-b0-355c32eb.pth"  # 将路径替换为你的预训练参数权重的路径
+        pretrained_path = "./efficientnet-b0-355c32eb.pth"  # 将路径替换为你的预训练参数权重的路径
         state_dict = torch.load(pretrained_path)
         model.load_state_dict(state_dict)
     
