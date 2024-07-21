@@ -29,7 +29,7 @@ def main(config):
         'tid2013': main_path + '/image_data/tid2013',
         'livec': main_path + '/image_data/ChallengeDB_release',  #
         'koniq': main_path + '/image_data/koniq/',  #
-        'bid': main_path + '/image_data/BID/',  #
+        'bid': main_path + '/BID/BID/',  #
     }
 
     img_num = {
@@ -41,6 +41,8 @@ def main(config):
         'bid': list(range(0, 586)),
     }
     sel_num = img_num[config.dataset]
+    # sel_num_test = img_num[config.dataset2]
+
     srcc_all = np.zeros(config.train_test_num, dtype=np.float64)
     plcc_all = np.zeros(config.train_test_num, dtype=np.float64)
     print('Training and testing on %s dataset for %d rounds...' % (config.dataset, config.train_test_num))
@@ -51,6 +53,7 @@ def main(config):
         config.run = wandb.init(project=config.dataset + "_iqa", config=config, mode="disabled")
 
     config.run.name = str(config.seed)
+    # seed = copy.deepcopy(config['seed'])
     set_random_seed(config.seed)
 
     for i in range(config.train_test_num):
@@ -113,18 +116,18 @@ def main(config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', dest='dataset', type=str, default='live', help='Support datasets: livec|koniq|bid|live|csiq|tid2013')
+    parser.add_argument('--dataset', dest='dataset', type=str, default='csiq', help='Support datasets: livec|koniq|bid|live|csiq|tid2013')
     # parser.add_argument('--dataset2', dest='dataset2', type=str, default='tid2013', help='Support datasets: livec|koniq|bid|live|csiq|tid2013')
     parser.add_argument('--train_patch_num', dest='train_patch_num', type=int, default=25, help='Number of sample patches from training image')
     parser.add_argument('--test_patch_num', dest='test_patch_num', type=int, default=25, help='Number of sample patches from testing image')
     parser.add_argument('--lr', dest='lr', type=float, default=2e-4, help='Learning rate')
     parser.add_argument('--weight_decay', dest='weight_decay', type=float, default=5e-4, help='Weight decay')
     parser.add_argument('--lr_ratio', dest='lr_ratio', type=int, default=10, help='Learning rate ratio for hyper network')
-    parser.add_argument('--batch_size', dest='batch_size', type=int, default=24, help='Batch size')
+    parser.add_argument('--batch_size', dest='batch_size', type=int, default=32, help='Batch size')
     parser.add_argument('--epochs', dest='epochs', type=int, default=10, help='Epochs for training')
     parser.add_argument('--patch_size', dest='patch_size', type=int, default=224, help='Crop size for training & testing image patches')
     parser.add_argument('--train_test_num', dest='train_test_num', type=int, default=10, help='Train-test times')
-    parser.add_argument('--wb', type=bool, default=False, help='use wandb')
+    parser.add_argument('--wb', type=bool, default=True, help='use wandb')
     parser.add_argument('--seed', type=int, default=2, help='use wandb')
 
     config = parser.parse_args()
