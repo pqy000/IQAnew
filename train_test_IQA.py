@@ -29,7 +29,7 @@ def main(config):
         'tid2013': main_path + '/image_data/tid2013',
         'livec': main_path + '/image_data/ChallengeDB_release',  #
         'koniq': main_path + '/image_data/koniq/',  #
-        'bid': main_path + '/BID/BID/',  #
+        'bid': main_path + '/image_data/BID/',  #
     }
 
     img_num = {
@@ -116,7 +116,7 @@ def main(config):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--dataset', dest='dataset', type=str, default='csiq', help='Support datasets: livec|koniq|bid|live|csiq|tid2013')
+    parser.add_argument('--dataset', dest='dataset', type=str, default='live', help='Support datasets: livec|koniq|bid|live|csiq|tid2013')
     # parser.add_argument('--dataset2', dest='dataset2', type=str, default='tid2013', help='Support datasets: livec|koniq|bid|live|csiq|tid2013')
     parser.add_argument('--train_patch_num', dest='train_patch_num', type=int, default=25, help='Number of sample patches from training image')
     parser.add_argument('--test_patch_num', dest='test_patch_num', type=int, default=25, help='Number of sample patches from testing image')
