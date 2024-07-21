@@ -1,0 +1,24 @@
+{
+    "os": "Linux-4.15.0-135-generic-x86_64-with-debian-buster-sid",
+    "python": "3.7.12",
+    "heartbeatAt": "2024-07-19T06:54:51.214137",
+    "startedAt": "2024-07-19T06:54:43.154230",
+    "docker": null,
+    "gpu": "NVIDIA GeForce GTX 1080 Ti",
+    "gpu_count": 6,
+    "cpu_count": 56,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/qingyi/GPU20/project_new/train_test_IQA.py",
+    "codePath": "project_new/train_test_IQA.py",
+    "git": {
+        "remote": "https://github.com/pqy000/hyperCL",
+        "commit": null
+    },
+    "email": "pqy_edu@163.com",
+    "root": "/home/qingyi/GPU20",
+    "host": "jungpu20",
+    "username": "qingyi",
+    "executable": "/home/qingyi/miniconda3/envs/py3/bin/python"
+}

@@ -1,0 +1,63 @@
+wandb_version: 1
+
+_wandb:
+  desc: null
+  value:
+    cli_version: 0.12.17
+    framework: torch
+    is_jupyter_run: false
+    is_kaggle_kernel: false
+    python_version: 3.7.12
+    start_time: 1721372083
+    t:
+      1:
+      - 1
+      - 41
+      - 55
+      2:
+      - 1
+      - 41
+      - 55
+      3:
+      - 16
+      - 17
+      4: 3.7.12
+      5: 0.12.17
+      8:
+      - 5
+batch_size:
+  desc: null
+  value: 32
+dataset:
+  desc: null
+  value: csiq
+epochs:
+  desc: null
+  value: 10
+lr:
+  desc: null
+  value: 0.0002
+lr_ratio:
+  desc: null
+  value: 10
+patch_size:
+  desc: null
+  value: 224
+seed:
+  desc: null
+  value: 2
+test_patch_num:
+  desc: null
+  value: 25
+train_patch_num:
+  desc: null
+  value: 25
+train_test_num:
+  desc: null
+  value: 10
+wb:
+  desc: null
+  value: true
+weight_decay:
+  desc: null
+  value: 0.0005

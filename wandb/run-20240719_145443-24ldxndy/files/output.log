@@ -1,0 +1,12 @@
+
+Round 1
+Loaded pretrained weights for efficientnet-b0
+Loaded pretrained weights for efficientnet-b0
+Traceback (most recent call last):
+  File "/home/qingyi/GPU20/project_new/train_test_IQA.py", line 135, in <module>
+    main(config)
+  File "/home/qingyi/GPU20/project_new/train_test_IQA.py", line 67, in main
+    solver = LBPIQASolver(config, folder_path[config.dataset], train_index, test_index)
+  File "/home/qingyi/GPU20/project_new/LBPSolver.py", line 24, in __init__
+    self.lr = config.lr
+KeyboardInterrupt
